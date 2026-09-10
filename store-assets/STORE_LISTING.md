@@ -63,8 +63,8 @@ are not transmitted to the developer.
   dashboard asks. Do not describe this as remote collection or transmission.
 - Selling, unrelated use, credit decisions, and personalized advertising:
   **No**.
-- Privacy policy URL: host `website/privacy.html` on a public HTTPS address and
-  enter that final URL.
+- Privacy policy URL: `https://laudarisd.github.io/Shield-AdBlocker/`
+  (the repository's `index.html`, published via GitHub Pages).
 
 ## Release notes for 1.1.0
 

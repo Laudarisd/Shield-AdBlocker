@@ -82,7 +82,7 @@ for (const requiredDocument of [
   "PRIVACY_POLICY.md",
   "SUPPORT.md",
   "store-assets/STORE_LISTING.md",
-  "website/privacy.html",
+  "index.html",
 ]) {
   assert(fs.existsSync(path.join(root, requiredDocument)), `${requiredDocument} is missing`);
 }

@@ -136,6 +136,7 @@
       <ul>
         <li>The domain or URL of the current website, where required for per-site protection controls.</li>
         <li>Page content or page elements when necessary to identify or hide advertisements, trackers, or cookie banners.</li>
+        <li>Third-party <code>Cookie</code> and <code>Set-Cookie</code> headers, which packaged rules can remove locally to limit cross-site tracking. Shield does not read, store, or transmit the values of these headers.</li>
         <li>Extension settings, preferences, and allowlisted websites.</li>
       </ul>
 
@@ -190,11 +191,18 @@
 
       <h2>8. Permissions</h2>
       <p>
-        Shield requests Chrome extension permissions that are necessary for its functionality.
-        Depending on the extension version, these permissions may include access required to apply
-        network blocking rules, store user preferences, and operate protection features across
-        websites.
+        Shield requests only the permissions its functionality requires:
       </p>
+      <ul>
+        <li><strong>declarativeNetRequest</strong> &mdash; applies packaged ad/tracker blocking rules,
+          removes third-party cookie headers, counts blocked requests, and applies user-requested
+          website exceptions.</li>
+        <li><strong>storage</strong> &mdash; saves protection switches and the website allowlist
+          locally in your browser profile.</li>
+        <li><strong>Access to all websites</strong> &mdash; injects packaged cosmetic styles and local
+          protection code on the websites you visit. Page content and browsing data are not
+          transmitted to the developer.</li>
+      </ul>
       <p>
         Permissions are used only for the purposes described in this Privacy Policy and in the
         extension's Chrome Web Store listing.

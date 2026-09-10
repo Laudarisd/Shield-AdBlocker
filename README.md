@@ -71,7 +71,7 @@ content/             Cosmetic filtering and page-state scripts
 rules/               Generated declarativeNetRequest rule files
 tools/               Rule generation, validation, and packaging scripts
 store-assets/        Chrome Web Store listing copy and images
-website/privacy.html Hostable privacy-policy page
+index.html           Privacy-policy page served by GitHub Pages
 ```
 
 ## Known limitations
