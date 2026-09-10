@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Shield-AdBlocker",
-  "version": "1.1.0",
+  "version": "1.0.1",
   "minimum_chrome_version": "105",
   "description": "Locally blocks common ads and trackers, limits third-party cookies, and hides common cookie banners.",
   "icons": {
