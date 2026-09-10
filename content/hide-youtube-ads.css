@@ -1,0 +1,20 @@
+/* Collapse YouTube's display ads and promoted shelves. Video ads are handled
+ * by skip-youtube-ads.ts because they share the normal video player. */
+:root:not(.simple-shield-disabled):not(.simple-shield-youtube-disabled) #masthead-ad,
+:root:not(.simple-shield-disabled):not(.simple-shield-youtube-disabled) ytd-display-ad-renderer,
+:root:not(.simple-shield-disabled):not(.simple-shield-youtube-disabled) ytd-promoted-sparkles-web-renderer,
+:root:not(.simple-shield-disabled):not(.simple-shield-youtube-disabled) ytd-promoted-video-renderer,
+:root:not(.simple-shield-disabled):not(.simple-shield-youtube-disabled) ytd-ad-slot-renderer,
+:root:not(.simple-shield-disabled):not(.simple-shield-youtube-disabled) ytd-in-feed-ad-layout-renderer,
+:root:not(.simple-shield-disabled):not(.simple-shield-youtube-disabled) ytm-promoted-sparkles-web-renderer,
+:root:not(.simple-shield-disabled):not(.simple-shield-youtube-disabled) .ytd-action-companion-ad-renderer,
+:root:not(.simple-shield-disabled):not(.simple-shield-youtube-disabled) .ytp-ad-overlay-container,
+:root:not(.simple-shield-disabled):not(.simple-shield-youtube-disabled) .ytp-ad-message-container,
+:root:not(.simple-shield-disabled):not(.simple-shield-youtube-disabled) .ytp-ad-player-overlay,
+:root:not(.simple-shield-disabled):not(.simple-shield-youtube-disabled) .video-ads.ytp-ad-module,
+:root:not(.simple-shield-disabled):not(.simple-shield-youtube-disabled) iframe[src*="doubleclick.net"] {
+  display: none !important;
+  visibility: hidden !important;
+  min-height: 0 !important;
+  height: 0 !important;
+}

@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [
+        {
+          "header": "cookie",
+          "operation": "remove"
+        }
+      ],
+      "responseHeaders": [
+        {
+          "header": "set-cookie",
+          "operation": "remove"
+        }
+      ]
+    },
+    "condition": {
+      "domainType": "thirdParty",
+      "resourceTypes": [
+        "xmlhttprequest",
+        "sub_frame",
+        "image",
+        "script",
+        "other",
+        "media",
+        "font",
+        "stylesheet",
+        "websocket",
+        "ping"
+      ]
+    }
+  }
+]

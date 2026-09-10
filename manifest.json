@@ -1,0 +1,70 @@
+{
+  "manifest_version": 3,
+  "name": "Shield-AdBlocker",
+  "version": "1.1.0",
+  "minimum_chrome_version": "105",
+  "description": "Locally blocks common ads and trackers, limits third-party cookies, and hides common cookie banners.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "declarativeNetRequest",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "block_ads_and_trackers",
+        "enabled": true,
+        "path": "rules/block-ads-and-trackers.json"
+      },
+      {
+        "id": "block_third_party_cookies",
+        "enabled": true,
+        "path": "rules/block-third-party-cookies.json"
+      }
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["content/hide-ad-elements.css", "content/hide-cookie-banners.css"],
+      "js": ["content/protection-state.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content/restore-scroll-after-hiding-banner.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "*://www.youtube.com/*",
+        "*://m.youtube.com/*",
+        "*://www.youtube-nocookie.com/*"
+      ],
+      "css": ["content/hide-youtube-ads.css"],
+      "js": ["content/skip-youtube-ads.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
+}

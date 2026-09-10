@@ -1,0 +1,30 @@
+/* hide-ad-elements.css
+ *
+ * Network-level blocking (rules/block-ads-and-trackers.json) stops most ads
+ * from ever loading, but sometimes leaves an empty container behind. This
+ * hides common ad-container patterns so blocked slots collapse instead of
+ * leaving blank space. Deliberately generic (broad class/id/attribute
+ * patterns), not a per-site rule set — written to avoid matching real page
+ * content. */
+
+:root:not(.simple-shield-disabled):not(.simple-shield-ad-elements-disabled) [id^="google_ads_iframe"],
+:root:not(.simple-shield-disabled):not(.simple-shield-ad-elements-disabled) [id^="div-gpt-ad"],
+:root:not(.simple-shield-disabled):not(.simple-shield-ad-elements-disabled) [class^="google-ad"],
+:root:not(.simple-shield-disabled):not(.simple-shield-ad-elements-disabled) ins.adsbygoogle,
+:root:not(.simple-shield-disabled):not(.simple-shield-ad-elements-disabled) [class="ad-container"],
+:root:not(.simple-shield-disabled):not(.simple-shield-ad-elements-disabled) [class="ad-wrapper"],
+:root:not(.simple-shield-disabled):not(.simple-shield-ad-elements-disabled) [class="ads-container"],
+:root:not(.simple-shield-disabled):not(.simple-shield-ad-elements-disabled) [class="ad-slot"],
+:root:not(.simple-shield-disabled):not(.simple-shield-ad-elements-disabled) [class="banner-ad"],
+:root:not(.simple-shield-disabled):not(.simple-shield-ad-elements-disabled) [class="advertisement"],
+:root:not(.simple-shield-disabled):not(.simple-shield-ad-elements-disabled) [class="sponsored-content"],
+:root:not(.simple-shield-disabled):not(.simple-shield-ad-elements-disabled) [data-ad-slot],
+:root:not(.simple-shield-disabled):not(.simple-shield-ad-elements-disabled) [data-google-query-id],
+:root:not(.simple-shield-disabled):not(.simple-shield-ad-elements-disabled) iframe[id^="google_ads_"],
+:root:not(.simple-shield-disabled):not(.simple-shield-ad-elements-disabled) iframe[src*="doubleclick.net"],
+:root:not(.simple-shield-disabled):not(.simple-shield-ad-elements-disabled) iframe[src*="googlesyndication.com"] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  min-height: 0 !important;
+}

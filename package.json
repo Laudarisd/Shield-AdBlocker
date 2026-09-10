@@ -1,0 +1,20 @@
+{
+  "name": "shield-ad-blocker",
+  "version": "1.1.0",
+  "description": "Ad, tracker, and cookie-consent-banner blocker for Chrome (Manifest V3, TypeScript)",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "watch": "tsc --watch",
+    "generate-rules": "node tools/generate-rules.js",
+    "test": "node --test --test-isolation=none tests/release.test.js",
+    "validate": "node tools/validate-release.js",
+    "package-release": "powershell -NoProfile -ExecutionPolicy Bypass -File tools/package-extension.ps1",
+    "release": "npm run generate-rules && npm run build && npm test && npm run validate && npm run package-release"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.270",
+    "typescript": "^5.5.0"
+  }
+}

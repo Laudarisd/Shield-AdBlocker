@@ -1,0 +1,40 @@
+/* hide-cookie-banners.css
+ *
+ * Hides the most common cookie-consent banner implementations (the big
+ * platforms: OneTrust, Cookiebot, Quantcast Choice/TrustArc, Osano) plus
+ * generic "cookie banner" naming patterns.
+ *
+ * HONEST LIMITATION: there is no universal standard for how sites build
+ * these banners, so this is a best-effort list covering the most common
+ * platforms, not a guarantee every site's banner disappears. Dedicated
+ * projects that specialize in exactly this (e.g. "I don't care about
+ * cookies") maintain much larger, continuously-updated, per-site rule
+ * databases — this is a reasonable starting point, not a replacement for
+ * that level of effort. */
+
+/* OneTrust */
+:root:not(.simple-shield-disabled):not(.simple-shield-cookie-banners-disabled) #onetrust-banner-sdk,
+:root:not(.simple-shield-disabled):not(.simple-shield-cookie-banners-disabled) #onetrust-consent-sdk,
+:root:not(.simple-shield-disabled):not(.simple-shield-cookie-banners-disabled) .onetrust-pc-dark-filter,
+/* Cookiebot */
+:root:not(.simple-shield-disabled):not(.simple-shield-cookie-banners-disabled) #CybotCookiebotDialog,
+:root:not(.simple-shield-disabled):not(.simple-shield-cookie-banners-disabled) #CybotCookiebotDialogBodyUnderlay,
+/* Quantcast Choice / TrustArc-style */
+:root:not(.simple-shield-disabled):not(.simple-shield-cookie-banners-disabled) .qc-cmp2-container,
+:root:not(.simple-shield-disabled):not(.simple-shield-cookie-banners-disabled) .truste_overlay,
+:root:not(.simple-shield-disabled):not(.simple-shield-cookie-banners-disabled) #truste-consent-track,
+/* Osano */
+:root:not(.simple-shield-disabled):not(.simple-shield-cookie-banners-disabled) .osano-cm-window,
+:root:not(.simple-shield-disabled):not(.simple-shield-cookie-banners-disabled) .osano-cm-dialog,
+/* Conservative exact generic names. Substring matches are intentionally
+ * avoided because they can hide privacy-settings pages and real content. */
+:root:not(.simple-shield-disabled):not(.simple-shield-cookie-banners-disabled) #cookie-banner,
+:root:not(.simple-shield-disabled):not(.simple-shield-cookie-banners-disabled) .cookie-banner,
+:root:not(.simple-shield-disabled):not(.simple-shield-cookie-banners-disabled) #cookie-consent,
+:root:not(.simple-shield-disabled):not(.simple-shield-cookie-banners-disabled) .cookie-consent,
+:root:not(.simple-shield-disabled):not(.simple-shield-cookie-banners-disabled) #cookie-notice,
+:root:not(.simple-shield-disabled):not(.simple-shield-cookie-banners-disabled) .cookie-notice,
+:root:not(.simple-shield-disabled):not(.simple-shield-cookie-banners-disabled) .gdpr-banner {
+  display: none !important;
+  visibility: hidden !important;
+}

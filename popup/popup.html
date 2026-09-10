@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Shield-AdBlocker</title>
+<link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="panel">
+    <header class="panel__header">
+      <div class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <circle cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="2.4"/>
+          <path d="M6.9 17.1 17.1 6.9" fill="none" stroke="currentColor"
+                stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="header-text">
+        <p class="eyebrow">Shield-AdBlocker</p>
+        <h1 id="statusHeadline">Protecting this browser</h1>
+      </div>
+    </header>
+
+    <button id="powerToggle" class="power" role="switch" aria-checked="true">
+      <span class="power__dot"></span>
+      <span class="power__label" id="powerLabel">On</span>
+    </button>
+
+    <div class="tally">
+      <span class="tally__count" id="blockedCount">0</span>
+      <span class="tally__label">requests blocked on this tab</span>
+    </div>
+
+    <section class="site-control" aria-labelledby="siteName">
+      <div>
+        <span class="site-control__eyebrow">Current website</span>
+        <strong id="siteName">Unavailable on this page</strong>
+      </div>
+      <button id="siteToggle" class="site-control__button" type="button" disabled>
+        Pause here
+      </button>
+    </section>
+
+    <fieldset class="options">
+      <legend>Protection options</legend>
+      <label class="option">
+        <span>Ads &amp; trackers</span>
+        <input type="checkbox" data-setting="blockAdsAndTrackers" checked />
+        <span class="option__switch" aria-hidden="true"></span>
+      </label>
+      <label class="option">
+        <span>Third-party cookies</span>
+        <input type="checkbox" data-setting="blockThirdPartyCookies" checked />
+        <span class="option__switch" aria-hidden="true"></span>
+      </label>
+      <label class="option">
+        <span>YouTube cleanup <small>(experimental)</small></span>
+        <input type="checkbox" data-setting="skipYouTubeAds" checked />
+        <span class="option__switch" aria-hidden="true"></span>
+      </label>
+      <label class="option">
+        <span>Cookie banners</span>
+        <input type="checkbox" data-setting="hideCookieBanners" checked />
+        <span class="option__switch" aria-hidden="true"></span>
+      </label>
+      <label class="option">
+        <span>Hide empty ad spaces</span>
+        <input type="checkbox" data-setting="hideAdElements" checked />
+        <span class="option__switch" aria-hidden="true"></span>
+      </label>
+    </fieldset>
+
+    <footer class="panel__footer">
+      <span id="ruleCount">— rules loaded</span>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
