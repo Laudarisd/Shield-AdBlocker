@@ -3,7 +3,7 @@
   <h1>Shield-AdBlocker</h1>
   <p><strong>A lightweight, local-first content blocker for Chrome.</strong></p>
   <p>
-    <img src="https://img.shields.io/badge/version-1.1.0-1FA966" alt="Version 1.1.0" />
+    <img src="https://img.shields.io/badge/version-1.0.1-1FA966" alt="Version 1.1.0" />
     <img src="https://img.shields.io/badge/Manifest-V3-blue" alt="Manifest V3" />
     <img src="https://img.shields.io/badge/TypeScript-5.x-3178C6" alt="TypeScript 5.x" />
     <img src="https://img.shields.io/badge/Chrome%20%7C%20Edge%20%7C%20Brave-desktop-lightgrey" alt="Chrome, Edge, Brave" />
